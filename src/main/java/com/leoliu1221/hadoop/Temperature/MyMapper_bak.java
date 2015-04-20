@@ -7,7 +7,7 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class MyMapper extends Mapper<Object, Text, Text, IntWritable> {
+public class MyMapper_bak extends Mapper<Object, Text, Text, IntWritable> {
 
 	private final IntWritable ONE = new IntWritable(1);
 	private Text word = new Text();
@@ -20,7 +20,8 @@ public class MyMapper extends Mapper<Object, Text, Text, IntWritable> {
 		// value.
 		String data = value.toString();
 		// Temperature = positions at 87-­‐92
-		Integer temp = Integer.parseInt(data.substring(89, 92));
+		Integer temp = Integer.parseInt(data.substring(88, 92));
+		if(data.charAt(87)=='-') temp = -1*temp;
 		if (temp == 9999)
 			return;
 

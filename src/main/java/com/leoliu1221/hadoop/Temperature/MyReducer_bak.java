@@ -6,7 +6,7 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
  
-public class MyReducer extends
+public class MyReducer_bak extends
         Reducer<Text, IntWritable, Text, IntWritable> {
  
     public void reduce(Text text, Iterable<IntWritable> values, Context context)
